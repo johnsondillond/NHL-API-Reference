@@ -1321,34 +1321,6 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-detail/9/20242025/
 
 #### Team Shot Location - Top 10
 
-- **Endpoint**: `/v1/edge/team-shot-location-top-10/{position}/{category}/{sort-by}/{season}/{game-type}`; `/v1/edge/team-shot-location-top-10/{position}/{category}/{sort-by}/now`
-- **Method**: GET
-- **Description**: Retrieve team-based ranking for NHL Edge data - **TODO** 
-- **Parameters**:
-  - `position` (str) - 
-    - 'all' - Forwards and Defense
-    - 'F' - Forwards
-    - 'D' - Defense
-  - `category` (str)  - **TODO** 
-    - 'unknown' - All Locations
-    - 'unknown' - High-Danger
-    - 'unknown' - Mid-Range
-    - 'unknown' - Long-Range
-  - `sort-by` (str) - String - **TODO** 
-    - 'unknown' - Shots on Goal
-    - 'unknown' - Goals
-    - 'unknown' - Shooting Percentage
-  - `season` (int) - Season in YYYYYYYY format
-  - `game-type` (int) - 2 for regular season, 3 for postseason
-- **Response**: JSON format
-
-###### Example using cURL:
-
-```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-location-top-10/F/{category}/{sort-by}/20242025/2"
-```
-#### Team Shot Location - Top 10
-
 - **Endpoint**: `/v1/edge/team-shot-location-top-10/{position}/{sort-by}/{category}/{season}/{game-type}`; `/v1/edge/team-shot-location-top-10/{position}/{sort-by}/{category}/now`
 - **Method**: GET
 - **Description**: Retrieve team-based ranking for NHL Edge data
@@ -1373,7 +1345,24 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-location-top-10/F/{categ
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-location-top-10/forwards/goals/all/20252026/2"
+curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-location-top-10/forwards/goals/all/now"
+```
+
+#### Team Shot Location - Detail
+
+- **Endpoint**: `/v1/edge/team-shot-location-detail/{team-id}/{season}/{game-type}`; `/v1/edge/team-shot-location-detail/{team-id}/now`
+- **Method**: GET
+- **Description**: Shot count by all locations and positions
+- **Parameters**:
+  - `team-id` (int) - Team ID
+  - `season` (int) - Season in YYYYYYYY format
+  - `game-type` (int) - 2 for regular season, 3 for postseason
+- **Response**: JSON format
+
+###### Example using cURL:
+
+```bash
+curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-location-detail/9/20242025/2"
 ```
 
 #### 
@@ -1758,20 +1747,20 @@ curl -X GET "https://api-web.nhle.com/v1/edge/goalie-5v5-detail/8476999/20242025
 
 #### Goalie Shot Location - Top 10
 
-- **Endpoint**: `/v1/edge/goalie-shot-location-top-10/{category}/{sort-by}/{season}/{game-type}`; `/v1/edge/goalie-shot-location-top-10/{category}/{sort-by}/now`
+- **Endpoint**: `/v1/edge/goalie-shot-location-top-10/{sort-by}/{category}/{season}/{game-type}`; `/v1/edge/goalie-shot-location-top-10/{sort-by}/{category}/now`
 - **Method**: GET
-- **Description**: Presumably top 10 goalies based on the specified filters. -**TODO**
+- **Description**: Presumably top 10 goalies based on the specified filters.
 - **Parameters**:
-  - `category` (str)  - **TODO** 
-    - 'unknown' - All Locations
-    - 'unknown' - High-Danger
-    - 'unknown' - Mid-Range
-    - 'unknown' - Long-Range
-  - `sort-by` (str) - String - **TODO** 
-    - 'unknown' - Shots Against
-    - 'unknown' - Saves
-    - 'unknown' - Goals Against
-    - 'unknown' - Save %
+  - `category` (str)
+    - 'all' - All Locations
+    - 'high' - High-Danger
+    - 'mid' - Mid-Range
+    - 'long' - Long-Range
+  - `sort-by` (str) - String
+    - 'save-pctg' - Save %
+    - 'saves' - Saves
+    - 'shots-against' - Shots Against
+    - 'goals-against' - Goals Against
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1779,7 +1768,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/goalie-5v5-detail/8476999/20242025
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/goalie-shot-location-top-10/{category}/{sort-by}/20242025/2"
+curl -X GET "https://api-web.nhle.com/v1/edge/goalie-shot-location-top-10/save-pctg/all/now"
 ```
 
 #### Goalie Shot Location - Detail
