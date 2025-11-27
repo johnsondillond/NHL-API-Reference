@@ -1301,7 +1301,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-zone-time-details/9/20242025/
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-top-10/forwards/90-99/now"
+curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-top-10/F/90-99/now"
 ```
 
 #### Team Shot Speed - Detail
