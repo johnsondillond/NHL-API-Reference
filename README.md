@@ -1201,10 +1201,10 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-distance-detail/9/202
 - **Method**: GET
 - **Description**: Retrieve team-based ranking for NHL Edge data
 - **Parameters**:
-  - `position` (str) - 
+  - `position` (str) -
     - 'all' - Forwards and Defense
-    - 'forwards' - Forwards
-    - 'defense' - Defense
+    - 'F' - Forwards
+    - 'D' - Defense
   - `sort-by` (str) - String
     - 'max' - Max skating speed
     - 'over-22' - 22 mph+ bursts
@@ -1217,7 +1217,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-distance-detail/9/202
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-speed-top-10/forwards/20-22/now"
+curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-speed-top-10/F/20-22/now"
 ```
 
 #### Team Skating Speed - Detail
@@ -1476,8 +1476,8 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-skating-distance-detail/848
 - **Parameters**:
   - `position` (str) -
     - 'all' - Forwards and Defense
-    - 'forwards' - Forwards
-    - 'defense' - Defense
+    - 'F' - Forwards
+    - 'D' - Defense
   - `sort-by` (str) - String
     - 'max' - Max skating speed
     - 'over-22' - 22 mph+ bursts
@@ -1490,7 +1490,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-skating-distance-detail/848
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/skater-speed-top-10/forwards/over-22/now"
+curl -X GET "https://api-web.nhle.com/v1/edge/skater-speed-top-10/F/over-22/now"
 ```
 
 #### Skater Skating Speed - Detail
